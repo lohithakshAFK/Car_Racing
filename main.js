@@ -1,5 +1,7 @@
 canvas =document.getElementById("myCanvas");
 ctx = canvas.getContext("2d");
+var background = ["race_1", "race_2", "race_3", "race_4"];
+random_numbers = Math.floor(Math.random()*4);
 
 var car_1_height = 90;
 var car_1_width = 100;
@@ -7,7 +9,7 @@ var car_1_width = 100;
 var car_2_height = 90;
 var car_2_width = 100;
 
-background_img = "racing.jpg";
+background_img = background[random_numbers];
 car_1_img = "car1.png";
 car_2_img = "car2.png";
 
@@ -70,22 +72,102 @@ function my_key_down(e){
     }
 
     if (key_pressed == "87"){
-        up();
+        w();
         console.log("up");
     }
 
     if (key_pressed == "83"){
-        down();
+        s();
         console.log("down");
     }
 
     if (key_pressed == "65"){
-        left();
+        a();
         console.log("left");
     }
 
     if (key_pressed == "68"){
-        right();
+        d();
         console.log("right");
+    }
+}
+
+function up(){
+    if (car1_y >=0){
+    car1_y = car1_y - 10;
+    console.log("position of car_1 = (" + car1_x + "," + car1_y + ")")
+    upload_background();
+    upload_car1();
+    upload_car2();
+    }
+}
+
+function w(){
+    if (car2_y >=0){
+    car2_y = car2_y - 10;
+    console.log("position of car_2 = (" + car2_x + "," + car2_y + ")")
+    upload_background();
+    upload_car1();
+    upload_car2();
+    }
+}
+
+function down(){
+    if (car1_y <=500){
+    car1_y = car1_y + 10;
+    console.log("position of car_1 = (" + car1_x + "," + car1_y + ")")
+    upload_background();
+    upload_car1();
+    upload_car2();
+    }
+}
+
+function s(){
+    if (car2_y <=500){
+    car2_y = car2_y + 10;
+    console.log("position of car_2 = (" + car2_x + "," + car2_y + ")")
+    upload_background();
+    upload_car1();
+    upload_car2();
+    }
+}
+
+function left(){
+    if (car1_x <=700){
+    car1_x = car1_x - 10;
+    console.log("position of car_1 = (" + car1_x + "," + car1_y + ")")
+    upload_background();
+    upload_car1();
+    upload_car2();
+    }
+}
+
+function a(){
+    if(car2_x <=700){
+    car2_x = car2_x - 10;
+    console.log("position of car_2 = (" + car2_x + "," + car2_y + ")")
+    upload_background();
+    upload_car1();
+    upload_car2();
+    }
+}
+
+function right(){
+    if (car1_x >=0){
+    car1_x = car1_x + 10;
+    console.log("position of car_1 = (" + car1_x + "," + car1_y + ")")
+    upload_background();
+    upload_car1();
+    upload_car2();
+    }
+}
+
+function d(){
+    if (car2_x <=700){
+    car2_x = car2_x + 10;
+    console.log("position of car_2 = (" + car2_x + "," + car2_y + ")")
+    upload_background();
+    upload_car1();
+    upload_car2();
     }
 }
