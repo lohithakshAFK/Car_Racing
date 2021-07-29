@@ -1,13 +1,13 @@
 canvas =document.getElementById("myCanvas");
 ctx = canvas.getContext("2d");
-var background = ["race_1", "race_2", "race_3", "race_4"];
+var background = ["race_1.jpg", "race_2.jpg", "race_3.jpg", "race_4.jpg"];
 random_numbers = Math.floor(Math.random()*4);
 
-var car_1_height = 90;
+var car_1_height = 60;
 var car_1_width = 100;
 
-var car_2_height = 90;
-var car_2_width = 100;
+var car_2_height = 120;
+var car_2_width = 120;
 
 background_img = background[random_numbers];
 car_1_img = "car1.png";
@@ -133,7 +133,7 @@ function s(){
 }
 
 function left(){
-    if (car1_x <=700){
+    if (car1_x >=0){
     car1_x = car1_x - 10;
     console.log("position of car_1 = (" + car1_x + "," + car1_y + ")")
     upload_background();
@@ -143,7 +143,7 @@ function left(){
 }
 
 function a(){
-    if(car2_x <=700){
+    if(car2_x >=0){
     car2_x = car2_x - 10;
     console.log("position of car_2 = (" + car2_x + "," + car2_y + ")")
     upload_background();
@@ -153,7 +153,7 @@ function a(){
 }
 
 function right(){
-    if (car1_x >=0){
+    if (car1_x <=700){
     car1_x = car1_x + 10;
     console.log("position of car_1 = (" + car1_x + "," + car1_y + ")")
     upload_background();
